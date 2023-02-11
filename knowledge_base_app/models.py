@@ -17,6 +17,9 @@ class Analysis(models.Model):
     def get_absolute_url(self):
         return reverse('analysis_detail', args=[str(self.id)])
 
+    class Meta:
+        ordering = ['title']
+
 class Gobmp(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     analysis_Gcode = models.CharField(max_length=15, null=False, blank=False)

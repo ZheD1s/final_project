@@ -34,7 +34,6 @@ class AnalysisDeleteView(DeleteView):
 class SearchResultView(ListView):
     model = Analysis
     template_name = 'search_results.html'
-    # queryset = Analysis.objects.filter(title__icontains='Гликолизированный гемоглобин')
 
     def get_queryset(self):
         query = self.request.GET.get('q')
