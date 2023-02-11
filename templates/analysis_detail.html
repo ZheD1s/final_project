@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <p>{{ analysis_detail.title }}</p>
+        <p>{{ analysis_detail.analysis_code }}</p>
+        <p>{{ analysis_detail.completion_date }}</p>
+        <p>{{ analysis_detail.price }}</p>
+        <p>{{ analysis_detail.consumables }}</p>
+        {% for rater in analysis_detail.rater.all %}
+            <p> {{ rater.analysis_Gcode }} {{ rater.title }} {{ rater.price }}</p>
+        {% endfor %}
+        <p>{{ analysis_detail.consumables.taking }}</p>
+        <p>{{ analysis_detail.consumables.method_transportation }}</p>
+        <p>{{ analysis_detail.how_prepare }}</p>
+        <a href="{% url 'analysis_update' analysis_detail.id %}">
+            <button>
+                Изменение параметров анализа
+            </button>
+        </a>
+        <br>
+        <a href="{% url 'analysis_delete' analysis_detail.id %}">
+            <button>
+                Удалить анализ
+            </button>
+        </a>
+        <br>
+        <a href="{% url 'home' %}">
+            <button>
+                Главная
+            </button>
+        </a>
+</body>
+</html>

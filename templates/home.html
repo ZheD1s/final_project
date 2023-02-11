@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>База знаний</title>
+</head>
+<body>
+    <h1>База знаний Alatau Lab</h1>
+    <h1>Hello, {{ user.username }}!</h1>
+    <a href="{% url 'login' %}">
+        <button>
+            Log In
+        </button>
+    </a>
+    <br>
+    <a href="{% url 'registration' %}">
+        <button>
+            Registration
+        </button>
+    </a>
+    <br>
+    <a href="{% url 'my_cabinet' %}">
+        <button>
+            Мой Кабинет
+        </button>
+    </a>
+    <br>
+    <form action="{% url 'search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Search...">
+    </form>
+    <br>
+        {% for analys in analysis %}
+            <li>
+                <a href="{% url 'analysis_detail' analys.id %}">{{ analys.title }}</a>
+            </li>
+        {% endfor %}
+    <br>
+
+
+</body>
+</html>

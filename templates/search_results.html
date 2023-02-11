@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        {% for analys in object_list %}
+            <li>
+                {{ analys.title }}
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'home' %}">
+        <button>
+            Главная
+        </button>
+    </a>
+</body>
+</html>
