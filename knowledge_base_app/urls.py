@@ -10,5 +10,6 @@ urlpatterns = [
     path('my_cabinet/', TemplateView.as_view(template_name='my_cabinet.html'), name='my_cabinet'),
     path('search/', SearchResultView.as_view(), name='search_results'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('geo/', home, name='geo'),
     path('', AnalysisListView.as_view(), name='home'),
 ]
