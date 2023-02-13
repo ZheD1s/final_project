@@ -62,5 +62,4 @@ def home(request):
     country = geolocation_data['country']
     region = geolocation_data['region']
 
-    return HttpResponse('Welcome! '
-                        'Your IP address is: {} and you are visiting from {} in {}'.format(ip, region, country))
+    return HttpResponse('Ваш IP-адрес: {} и вы посещаете данный сайт из {} в {}'.format(ip, region, country))
